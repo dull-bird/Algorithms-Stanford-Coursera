@@ -23,15 +23,15 @@ def merge(list1, list2):
     return out, count
 
 
-def divide(list):
-    n = len(list)
-    return list[0:n//2], list[n//2:]
+def divide(l):
+    n = len(l)
+    return l[0:n//2], l[n//2:]
 
-def inv_count(list):
-    if len(list) == 1:
-        return list, 0
+def inv_count(l):
+    if len(l) == 1:
+        return l, 0
     else:
-        list1, list2 = divide(list)
+        list1, list2 = divide(l)
         #print(list1, list2)
         list1_sorted, count1 = inv_count(list1)
         list2_sorted, count2 = inv_count(list2)
@@ -41,7 +41,7 @@ def inv_count(list):
 
 
 if __name__ == "__main__":
-    data = np.loadtxt("a.txt")
-    list = data.tolist()
-    s, count = inv_count(list)
+    data = np.loadtxt("./course1/week2/IntegerArray.txt")
+    l = data.tolist()
+    s, count = inv_count(l)
     print(count)

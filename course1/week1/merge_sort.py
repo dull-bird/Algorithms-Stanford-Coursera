@@ -22,18 +22,18 @@ def divide(list):
     n = len(list)
     return list[0:n//2], list[n//2:]
 
-def div_merge(list):
-    if len(list) == 1:
+def merge_sort(l):
+    if len(l) == 1: # base case
         return list
-    else:
-        list1, list2 = divide(list)
+    else: # recursive case
+        list1, list2 = divide(l) # divide
         #print(list1, list2)
-        return merge(div_merge(list1), div_merge(list2))
+        return merge(merge_sort(list1), merge_sort(list2)) # sort sub-arrays recursively and then merge
 
 
 
 if __name__ == "__main__":
     out1 = merge([1], [6])
     #divid = divide([1,2,3,4,5])
-    out = div_merge([22,200, -1, 2, 1, 1,4,5,3])
+    out = merge_sort([22,200, -1, 2, 1, 1,4,5,3])
     print(out)
