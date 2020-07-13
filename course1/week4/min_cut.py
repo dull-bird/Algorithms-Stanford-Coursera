@@ -5,11 +5,14 @@ def choose_edge(G):
     #print("G", G)
     nodes = []
     edges = []
-    [(nodes.append(node), edges.append(node_edges)) for node, node_edges in G.items()]
-    edges_len_list = [len(node_edges) for node_edges in edges]
+    # [(nodes.append(node), edges.append(node_edges)) for node, node_edges in G.items()]
+    nodes, edges = zip(*G.items())
+    
+    
+    edges_num_list = [len(node_edges) for node_edges in edges]
     #print(nodes, edges)
 
-    v1 = np.random.choice(nodes, p = np.array(edges_len_list)/ sum(edges_len_list))
+    v1 = np.random.choice(nodes, p = np.array(edges_num_list)/ sum(edges_num_list))
     #print(v1)
     v2 = np.random.choice(G[v1])
     #print(v1, G[v1])

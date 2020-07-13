@@ -19,6 +19,6 @@ def find_max(l):
         else:
             return find_max(left)
             
-l = [1,2,3,4,5,1000,1000, 10,4,4,3,3,2,1]
+l = [1,2]
 
 print(find_max(l))

@@ -1,7 +1,8 @@
 import numpy
 
+
 def partition(list, p):
-    l =0
+    l = 0
     r = len(list)
 
     #list = list.copy()
@@ -14,15 +15,16 @@ def partition(list, p):
             list[i], list[j] = list[j], list[i]
             i += 1
     list[i - 1], list[l] = list[l], list[i - 1]
-    #return the new position of pivot
+    # return the new position of pivot
     return i - 1, list[l: i - 1], list[i: r]
 
+
 def choose_pivot(list):
-    #choose the pivot randomly
+    # choose the pivot randomly
     l = 0
     r = len(list)
     #p = randint(l, r)
-    #print(p)
+    # print(p)
 
     p1 = l
     p3 = r - 1
@@ -35,6 +37,7 @@ def choose_pivot(list):
         if list[i] == med:
             break
     return i
+
 
 def rand_select(list, i):
 
@@ -54,7 +57,7 @@ def rand_select(list, i):
 
 
 if __name__ == "__main__":
-    list = [7,6,5,4,3,2,1,0]
-    i = rand_select(list.copy(), 5)
+    list = [7, 6, 5, 4, 3, 2, 1, 0]
+    i = rand_select(list.copy(), 1)
     print(i)
     print(list)
